@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :todo_lists
+ 
+  #Nesting items into lists
+  resources :todo_lists do
+    resources :todo_items
+  end
+
   # Homepage
   root 'todo_lists#index'
 end
