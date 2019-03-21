@@ -2,7 +2,11 @@ Rails.application.routes.draw do
  
   # Nesting items into lists
   resources :todo_lists do
-    resources :todo_items
+    resources :todo_items do
+      member do
+        patch :complete
+      end
+    end
   end
 
   # Homepage
