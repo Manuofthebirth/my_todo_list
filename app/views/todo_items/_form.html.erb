@@ -1,0 +1,4 @@
+<%= simple_form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+	<%= f.input :title, placeholder: "New Item" %>
+	<%= f.button :submit %>
+<% end %>

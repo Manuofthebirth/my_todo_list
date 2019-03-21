@@ -1,18 +1,28 @@
 class TodoItemsController < ApplicationController
-  before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_todo_list
+  before_action :set_todo_item, except: [:create]
 
   def create
-    @todo_item = @todo_list.todo_items.create(item_params)
+    @todo_item = @todo_list.todo_items.create(todo_item_params)
+    redirect_to @todo_list
+  end
+
+  def destroy
+    @todo_item.destroy
     redirect_to @todo_list
   end
 
   private
 
-  def item_params
+  def todo_item_params
     params[:todo_item].permit(:title)
   end
 
-  def find_item
-    @todo_list = TodoList.find(:todo_list_id)
+  def set_todo_item
+    @todo_item = @todo_list.todo_items.find(params[:id])
+  end
+
+  def set_todo_list
+    @todo_list = TodoList.find(params[:todo_list_id])
   end
 end
