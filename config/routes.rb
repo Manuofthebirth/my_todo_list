@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  devise_for :users
   # Nesting items into lists
   resources :todo_lists do
     resources :todo_items do
