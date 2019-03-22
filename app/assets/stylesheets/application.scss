@@ -36,7 +36,19 @@ body {
 	font-size: 1em;
 	color: white;
 	// font-weight: 100;
-	border: 3px solid $white_opaque;
+	// border: 3px solid $white_opaque;
+	padding: .5em 1em;
+	border-radius: 5px;
+	display: block;
+	margin: 1em 25%;
+}
+
+#alert {
+	text-align: center;
+	font-size: 1em;
+	color: white;
+	// font-weight: 100;
+	// border: 3px solid $white_opaque;
 	padding: .5em 1em;
 	border-radius: 5px;
 	display: block;
