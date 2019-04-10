@@ -13,13 +13,15 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, required: true %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit" %>
   </div>
+  
 <% end %>

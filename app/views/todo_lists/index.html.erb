@@ -6,5 +6,6 @@
 <% end %>
 
 <div class="links">
-  <%= link_to "New List", new_todo_list_path %>
+  <%= link_to "New List", new_todo_list_path %> |
+  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 </div>
