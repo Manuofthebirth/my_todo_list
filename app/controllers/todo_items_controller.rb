@@ -4,6 +4,7 @@ class TodoItemsController < ApplicationController
 
   def create
     @todo_item = @todo_list.todo_items.create(todo_item_params)
+    @todo_item.deadline_date
     redirect_to @todo_list
   end
 
@@ -20,7 +21,7 @@ class TodoItemsController < ApplicationController
   private
 
   def todo_item_params
-    params[:todo_item].permit(:title)
+    params[:todo_item].permit(:title, :deadline_date)
   end
 
   def find_todo_item
